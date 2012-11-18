@@ -21,6 +21,6 @@ class Compcert < Formula
   end
 
   def test
-    system "compcert"
+    system "ccomp"
   end
 end
