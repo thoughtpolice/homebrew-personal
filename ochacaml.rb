@@ -36,7 +36,7 @@ class Ochacaml < Formula
 
     (bin+'ochacaml').write <<-EOS.undent
       #!/bin/bash
-      exec #{bin}/camlrun #{lib}/camltop -stdlib #{prefix}/lib $*
+      exec #{bin}/camlrun #{lib}/camltop -stdlib #{lib} $*
     EOS
     chmod 0775, bin+'ochacaml'
   end

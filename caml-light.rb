@@ -32,7 +32,7 @@ class CamlLight < Formula
 
     (bin+'caml-light').write <<-EOS.undent
       #!/bin/bash
-      exec #{bin}/camlrun #{lib}/camltop -stdlib #{prefix}/lib $*
+      exec #{bin}/camlrun #{lib}/camltop -stdlib #{lib} $*
     EOS
     chmod 0775, bin+'caml-light'
   end
