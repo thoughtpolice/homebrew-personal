@@ -8,6 +8,11 @@ class Ochacaml < Formula
 
   keg_only "It conflicts with OCaml (ocamlyacc, etc.)"
 
+  fails_with :clang do
+    build 421
+    cause "'linker' input unused when '-E' is present"
+  end
+
   def patches
     { :p1 => "http://raw.github.com/gist/4101977/0f44a77fb7850451e453e2a5f387d263c41857e2/ochacaml.diff" }
   end
@@ -19,6 +24,7 @@ class Ochacaml < Formula
       s.change_make_var! "BINDIR", bin
       s.change_make_var! "LIBDIR", lib
       s.change_make_var! "MANDIR", man1
+      s.change_make_var! "CPP", "/usr/bin/cpp -P -traditional -Dunix"
     end
 
     man1.mkpath # The install script expects this to be there
