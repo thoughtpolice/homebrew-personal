@@ -11,7 +11,7 @@ class Ochacaml < Formula
   def patches
     { :p1 => "http://raw.github.com/gist/4101977/0f44a77fb7850451e453e2a5f387d263c41857e2/ochacaml.diff" }
   end
-  
+
   def install
     ENV.O2
 
