@@ -34,4 +34,14 @@ class Ochacaml < Formula
     EOS
     chmod 0775, bin+'ochacaml'
   end
+
+  def caveats; <<-EOS.undent
+    This formula is keg-only, so it doesn't conflict with OCaml.
+
+    You probably just want the OchaCaml REPL, which you can get by
+    doing:
+
+      $ ln -s #{bin}/ochacaml ~/bin/ochacaml
+    EOS
+  end
 end
