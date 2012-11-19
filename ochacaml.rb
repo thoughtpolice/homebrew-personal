@@ -6,6 +6,7 @@ class Ochacaml < Formula
   sha1 '967d0a102409dc6201387302cb44b8f2b2828c46'
   version '110912'
 
+  depends_on 'rlwrap'
   keg_only "It conflicts with OCaml (ocamlyacc, etc.)"
 
   fails_with :clang do
@@ -36,7 +37,7 @@ class Ochacaml < Formula
 
     (bin+'ochacaml').write <<-EOS.undent
       #!/bin/bash
-      exec #{bin}/camlrun #{lib}/camltop -stdlib #{lib} $*
+      exec rlwrap #{bin}/camlrun #{lib}/camltop -stdlib #{lib} $*
     EOS
     chmod 0775, bin+'ochacaml'
   end
