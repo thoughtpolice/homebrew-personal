@@ -26,6 +26,7 @@ class Nix < Formula
 
     You need to add the nixpkgs channel:
 
+      $ nix-init.sh
       $ nix-channel --add http://nixos.org/channels/nixpkgs-unstable
       $ nix-channel --update
 
